@@ -7,7 +7,7 @@ export default function ProfitDashboard() {
 
   const fetchProfitSummary = async () => {
     try {
-      const res = await axiosInstance.get("/dashboard/profit-summary");
+      const res = await axiosInstance.get("/api/dashboard/profit-summary");
       setData(res.data);
     } catch (error) {
       console.log(error);

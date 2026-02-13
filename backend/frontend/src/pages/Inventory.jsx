@@ -24,7 +24,7 @@ export default function Inventory() {
 
   const fetchProjects = async () => {
     try {
-      const res = await axiosInstance.get("/projects");
+      const res = await axiosInstance.get("/api/projects");
       setProjects(res.data);
     } catch (error) {
       console.log(error);
@@ -34,7 +34,7 @@ export default function Inventory() {
 
   const fetchUnits = async (projectId) => {
     try {
-      const res = await axiosInstance.get(`/units/${projectId}`);
+      const res = await axiosInstance.get(`/api/units/${projectId}`);
       setUnits(res.data);
     } catch (error) {
       console.log(error);

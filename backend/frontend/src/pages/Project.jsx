@@ -10,7 +10,7 @@ export default function Projects() {
 
   const fetchProjects = async () => {
     try {
-      const res = await axiosInstance.get("/projects");
+      const res = await axiosInstance.get("/api/projects");
       setProjects(res.data);
     } catch (error) {
       console.log(error);

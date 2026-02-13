@@ -20,7 +20,7 @@ export default function Payments() {
 
   const fetchBookings = async () => {
     try {
-      const res = await axiosInstance.get("/bookings");
+      const res = await axiosInstance.get("/api/bookings");
       setBookings(res.data);
     } catch (error) {
       console.log(error);
@@ -30,7 +30,7 @@ export default function Payments() {
 
   const fetchPayments = async () => {
     try {
-      const res = await axiosInstance.get("/payments");
+      const res = await axiosInstance.get("/api/payments");
       setPayments(res.data);
     } catch (error) {
       console.log(error);

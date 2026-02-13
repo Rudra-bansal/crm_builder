@@ -7,7 +7,7 @@ export default function Finance() {
 
   const fetchSummary = async () => {
     try {
-      const res = await axiosInstance.get("/bookings/summary/all");
+      const res = await axiosInstance.get("/api/bookings/summary/all");
       setSummary(res.data);
     } catch (error) {
       console.log(error);

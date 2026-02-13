@@ -20,7 +20,7 @@ export default function Bookings() {
 
   const fetchLeads = async () => {
     try {
-      const res = await axiosInstance.get("/leads");
+      const res = await axiosInstance.get("/api/leads");
       setLeads(res.data);
     } catch (error) {
       console.log(error);
@@ -30,7 +30,7 @@ export default function Bookings() {
 
   const fetchProjects = async () => {
     try {
-      const res = await axiosInstance.get("/projects");
+      const res = await axiosInstance.get("/api/projects");
       setProjects(res.data);
     } catch (error) {
       console.log(error);
@@ -40,7 +40,7 @@ export default function Bookings() {
 
   const fetchUnits = async (projectId) => {
     try {
-      const res = await axiosInstance.get(`/units/${projectId}`);
+      const res = await axiosInstance.get(`/api/units/${projectId}`);
       setUnits(res.data.filter((u) => u.status === "Available"));
     } catch (error) {
       console.log(error);
@@ -50,7 +50,7 @@ export default function Bookings() {
 
   const fetchBookings = async () => {
     try {
-      const res = await axiosInstance.get("/bookings");
+      const res = await axiosInstance.get("/api/bookings");
       setBookings(res.data);
     } catch (error) {
       console.log(error);

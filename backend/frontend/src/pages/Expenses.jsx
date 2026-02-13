@@ -19,7 +19,7 @@ export default function Expenses() {
 
   const fetchProjects = async () => {
     try {
-      const res = await axiosInstance.get("/projects");
+      const res = await axiosInstance.get("/api/projects");
       setProjects(res.data);
     } catch (error) {
       console.log(error);
@@ -29,7 +29,7 @@ export default function Expenses() {
 
   const fetchExpenses = async (projectId) => {
     try {
-      const res = await axiosInstance.get(`/expenses/${projectId}`);
+      const res = await axiosInstance.get(`/api/expenses/${projectId}`);
       setExpenses(res.data);
     } catch (error) {
       console.log(error);

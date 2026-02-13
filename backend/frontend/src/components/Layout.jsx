@@ -34,7 +34,7 @@ export default function Layout({ children }) {
 
   const fetchAlerts = async () => {
     try {
-      const res = await axiosInstance.get("/dashboard/followup-alerts");
+      const res = await axiosInstance.get("/api/dashboard/followup-alerts");
 
       setAlerts(res.data);
       setNotificationCount(res.data.todayCount + res.data.overdueCount);

@@ -26,7 +26,7 @@ export default function Leads() {
   // Fetch Leads
   const fetchLeads = async () => {
     try {
-      const res = await axiosInstance.get("/leads");
+      const res = await axiosInstance.get("/api/leads");
       setLeads(res.data);
     } catch (error) {
       console.log(error);
