@@ -25,7 +25,7 @@ export default function Dashboard() {
   // Fetch Dashboard Overview Data
   const fetchOverview = async () => {
     try {
-      const res = await axiosInstance.get("/dashboard/overview");
+      const res = await axiosInstance.get("/api/dashboard/overview");
       setData(res.data);
     } catch (error) {
       console.log(error);
@@ -36,7 +36,7 @@ export default function Dashboard() {
   // Fetch Follow-up Alerts
   const fetchAlerts = async () => {
     try {
-      const res = await axiosInstance.get("/dashboard/followup-alerts");
+      const res = await axiosInstance.get("/api/dashboard/followup-alerts");
       setAlerts(res.data);
     } catch (error) {
       console.log(error);
