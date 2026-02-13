@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axiosInstance from "../utils/axiosInstance";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useSearchParams } from "react-router-dom";
 
 export default function Register() {
     const [name, setName] = useState("");
@@ -10,13 +10,22 @@ export default function Register() {
     const [password, setPassword] = useState("");
 
     const navigate = useNavigate();
+    const [searchParams] = useSearchParams();
+
+    // 🔒 Protect Register Page
+    useEffect(() => {
+        const key = searchParams.get("key");
+
+        if (key !== "RUDRA123") {
+            navigate("/");
+        }
+    }, [searchParams, navigate]);
 
     const handleRegister = async (e) => {
         e.preventDefault();
 
         try {
             const res = await axiosInstance.post("/api/auth/register", {
-
                 name,
                 email,
                 password,
