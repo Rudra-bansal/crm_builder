@@ -37,7 +37,7 @@ export default function Leads() {
   // Status Update
   const handleStatusChange = async (leadId, newStatus) => {
     try {
-      await axiosInstance.put(`/leads/update-status/${leadId}`, {
+      await axiosInstance.put(`/api/leads/update-status/${leadId}`, {
         status: newStatus,
       });
 
@@ -51,7 +51,7 @@ export default function Leads() {
   // Follow-up Update
   const handleFollowUpUpdate = async (leadId, followUpDate) => {
     try {
-      await axiosInstance.put(`/leads/update-followup/${leadId}`, {
+      await axiosInstance.put(`/api/leads/update-followup/${leadId}`, {
         followUpDate,
       });
 
@@ -74,7 +74,7 @@ export default function Leads() {
     setLoading(true);
 
     try {
-      await axiosInstance.post("/leads/create", {
+      await axiosInstance.post("/api/leads/create", {
         name: name.trim(),
         phone: phone.trim(),
         budget,

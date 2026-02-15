@@ -21,7 +21,7 @@ export default function LeadDetails() {
 
   const handleStatusChange = async (newStatus) => {
     try {
-      await axiosInstance.put(`/leads/update-status/${id}`, {
+      await axiosInstance.put(`/api/leads/update-status/${id}`, {
         status: newStatus,
       });
       fetchLead();
@@ -35,7 +35,7 @@ export default function LeadDetails() {
     if (!note.trim()) return;
 
     try {
-      await axiosInstance.post(`/leads/add-note/${id}`, {
+      await axiosInstance.post(`/api/leads/add-note/${id}`, {
         note,
       });
 

@@ -54,7 +54,7 @@ export default function Payments() {
     setLoading(true);
 
     try {
-      await axiosInstance.post("/payments/create", {
+      await axiosInstance.post("/api/payments/create", {
         bookingId: selectedBooking,
         amount: Number(amount),
         method,

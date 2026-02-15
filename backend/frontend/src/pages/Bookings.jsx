@@ -67,7 +67,7 @@ export default function Bookings() {
     }
 
     try {
-      await axiosInstance.post("/bookings/create", {
+      await axiosInstance.post("/api/bookings/create", {
         leadId: selectedLead,
         unitId: selectedUnit,
         sellingPrice: Number(sellingPrice),

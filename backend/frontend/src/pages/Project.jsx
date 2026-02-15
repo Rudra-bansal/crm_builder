@@ -22,7 +22,7 @@ export default function Projects() {
     e.preventDefault();
 
     try {
-      await axiosInstance.post("/projects/create", {
+      await axiosInstance.post("/api/projects/create", {
         name,
         location,
         totalUnits: Number(totalUnits),

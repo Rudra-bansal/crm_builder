@@ -58,7 +58,7 @@ export default function Inventory() {
     setLoading(true);
 
     try {
-      await axiosInstance.post("/units/create", {
+      await axiosInstance.post("/api/units/create", {
         projectId: selectedProject,
         tower,
         floor: floor ? Number(floor) : undefined,
@@ -88,7 +88,7 @@ export default function Inventory() {
 
   const handleStatusChange = async (unitId, newStatus) => {
     try {
-      await axiosInstance.put(`/units/update-status/${unitId}`, {
+      await axiosInstance.put(`/api/units/update-status/${unitId}`, {
         status: newStatus,
       });
 

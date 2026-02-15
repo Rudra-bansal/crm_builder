@@ -46,7 +46,7 @@ export default function Expenses() {
     }
 
     try {
-      await axiosInstance.post("/expenses/create", {
+      await axiosInstance.post("/api/expenses/create", {
         projectId: selectedProject,
         title,
         category,
